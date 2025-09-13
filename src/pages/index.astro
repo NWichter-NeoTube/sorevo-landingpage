@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Problem from "../components/Problem.astro";
 import Features from "../components/Features.astro";
+import VideoPlayer from "../components/VideoPlayer.astro";
 import SocialProof from "../components/SocialProof.astro";
 import PflegegradCheckCTA from "../components/PflegegradCheckCTA.astro";
 import DetailedExplanation from "../components/DetailedExplanation.astro";
@@ -15,6 +16,11 @@ import SiteFooter from "../components/SiteFooter.astro";
   <Hero />
   <Problem />
   <Features />
+  <VideoPlayer 
+    title="Sorevo: Die Lösung für den Pflege-Alltag"
+    description="Erfahren Sie in diesem kurzen Video, wie Sorevo Familien dabei hilft, den Pflege-Dschungel zu meistern und die beste Betreuung für ihre Angehörigen zu finden."
+    className="py-16 md:py-20"
+  />
   <PflegegradCheckCTA />
   <SocialProof />
   <DetailedExplanation />
