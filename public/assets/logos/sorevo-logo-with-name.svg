@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="200" viewBox="0 0 720 200">
+  <g>
+    <path d="M20,48 a26,26 0 0 1 26,-26 h112 a26,26 0 0 1 26,26 v56 c0,58 -60,88 -82,98 C78,190 20,162 20,104 Z" fill="#CFF5E4"/>
+    <text x="102" y="128" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="96" font-weight="800" text-anchor="middle" fill="#0E8D8F">S</text>
+  </g>
+  <text x="220" y="132" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="96" font-weight="700" fill="#1F2937">Sorevo</text>
+</svg>
