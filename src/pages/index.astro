@@ -1,16 +1,23 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Problem from "../components/Problem.astro";
+import Features from "../components/Features.astro";
+import SocialProof from "../components/SocialProof.astro";
+import DetailedExplanation from "../components/DetailedExplanation.astro";
+import InsuranceSelector from "../components/InsuranceSelector.astro";
+import CTA from "../components/CTA.astro";
+import FAQ from "../components/FAQ.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Hero />
+  <Problem />
+  <Features />
+  <SocialProof />
+  <DetailedExplanation />
+  <InsuranceSelector />
+  <CTA />
+  <FAQ />
+  <SiteFooter />
+</BaseLayout>

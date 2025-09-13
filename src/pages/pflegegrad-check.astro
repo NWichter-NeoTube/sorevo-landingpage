@@ -1,0 +1,291 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Pflegegrad-Schnellcheck | Sorevo" description="Prüfen Sie schnell und einfach, ob ein Antrag auf Pflegegrad sinnvoll ist.">
+  <section class="py-16 md:py-20 bg-gradient-to-b from-green-50 to-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
+          Schnell-Check: Pflegegrad beantragen?
+        </h1>
+        <p class="text-lg text-gray-600">
+          Beantworten Sie 7 kurze Fragen und erfahren Sie, ob ein Antrag auf Pflegegrad sinnvoll ist.
+        </p>
+      </div>
+
+      <form id="pflegegrad-check" class="space-y-8">
+        <!-- Frage 1: Körperpflege -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Körperpflege <span class="text-red-500">*</span>
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Benötigen Sie regelmäßig Hilfe bei der Körperpflege (z. B. beim Waschen, Duschen, An- und Auskleiden oder beim Toilettengang)?
+          </p>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="koerperpflege" value="ja" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Ja</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="koerperpflege" value="nein" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Nein</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Frage 2: Essen & Trinken -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Essen & Trinken <span class="text-red-500">*</span>
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Brauchen Sie Unterstützung beim Essen oder Trinken (z. B. Mahlzeiten zubereiten, Essen anreichen, Flüssigkeitszufuhr überwachen)?
+          </p>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="essen" value="ja" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Ja</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="essen" value="nein" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Nein</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Frage 3: Mobilität -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Mobilität <span class="text-red-500">*</span>
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Ist im Alltag regelmäßig Hilfe nötig, um sich fortzubewegen (z. B. Aufstehen, Hinsetzen, Treppensteigen, Bett verlassen, Positionswechsel im Bett)?
+          </p>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="mobilitaet" value="ja" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Ja</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="mobilitaet" value="nein" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Nein</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Frage 4: Kognitive Fähigkeiten -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Kognitive Fähigkeiten / Orientierung <span class="text-red-500">*</span>
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Gibt es dauerhafte Einschränkungen bei Orientierung oder Gedächtnis (z. B. Vergessen von Terminen, Verwechseln von Tageszeit, Orientierung in der Wohnung oder draußen)?
+          </p>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="kognition" value="ja" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Ja</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="kognition" value="nein" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Nein</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Frage 5: Aufsicht / Anleitung -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Aufsicht / Anleitung <span class="text-red-500">*</span>
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Ist eine regelmäßige Beaufsichtigung oder Anleitung notwendig, damit Tätigkeiten sicher ausgeführt werden können (z. B. bei Demenz, Gefahrensituationen vermeiden, Medikamente richtig einnehmen)?
+          </p>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="aufsicht" value="ja" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Ja</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="aufsicht" value="nein" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Nein</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Frage 6: Haushalt -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Haushalt <span class="text-red-500">*</span>
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Wird häufig Hilfe im Haushalt benötigt (z. B. Einkaufen, Kochen, Wohnung reinigen, Wäsche, Organisation des Alltags)?
+          </p>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="haushalt" value="ja" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Ja</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="haushalt" value="nein" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Nein</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Frage 7: Dauerhaftigkeit -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            Dauerhaftigkeit <span class="text-red-500">*</span>
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Besteht dieser Hilfebedarf voraussichtlich für mindestens 6 Monate oder länger?
+          </p>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="dauerhaftigkeit" value="ja" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Ja</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="dauerhaftigkeit" value="nein" class="w-4 h-4 text-green-600" required>
+              <span class="text-lg">Nein</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center pt-8">
+          <button 
+            type="submit" 
+            class="inline-flex items-center justify-center rounded-xl bg-green-600 px-8 py-4 text-white font-semibold text-lg shadow transition hover:bg-green-700"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Ergebnis anzeigen
+          </button>
+        </div>
+      </form>
+
+      <!-- Ergebnis Container -->
+      <div id="ergebnis-container" class="hidden mt-12">
+        <div class="bg-white rounded-2xl p-8 shadow-lg border-2">
+          <div id="ergebnis-content"></div>
+          <div class="mt-8 text-center">
+            <a 
+              href="/#insurance-selector" 
+              class="inline-flex items-center justify-center rounded-xl bg-gray-600 px-6 py-3 text-white font-semibold shadow transition hover:bg-gray-700"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+              </svg>
+              Zurück zur Krankenkassen-Auswahl
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  document.getElementById('pflegegrad-check').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    let jaCount = 0;
+    
+    // Zähle alle "Ja" Antworten
+    const questions = ['koerperpflege', 'essen', 'mobilitaet', 'kognition', 'aufsicht', 'haushalt', 'dauerhaftigkeit'];
+    questions.forEach(question => {
+      if (formData.get(question) === 'ja') {
+        jaCount++;
+      }
+    });
+    
+    // Zeige Ergebnis basierend auf Score
+    const ergebnisContainer = document.getElementById('ergebnis-container');
+    const ergebnisContent = document.getElementById('ergebnis-content');
+    
+    let ergebnisHTML = '';
+    
+    if (jaCount <= 2) {
+      ergebnisHTML = `
+        <div class="text-center">
+          <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold text-yellow-800 mb-4">Antrag eher nicht sinnvoll</h2>
+          <p class="text-lg text-gray-700 mb-6">
+            Basierend auf Ihren Antworten scheint der aktuelle Hilfebedarf noch nicht ausreichend für einen Pflegegrad zu sein.
+          </p>
+          <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-6 text-left">
+            <h3 class="font-semibold text-yellow-800 mb-3">Was Sie tun können:</h3>
+            <ul class="space-y-2 text-yellow-700">
+              <li>• Dokumentieren Sie weiterhin alle Hilfesituationen</li>
+              <li>• Wiederholen Sie diesen Test in einem halben Jahr</li>
+              <li>• Bei Verschlechterung des Gesundheitszustands erneut prüfen</li>
+              <li>• Informieren Sie sich über andere Unterstützungsmöglichkeiten</li>
+            </ul>
+          </div>
+        </div>
+      `;
+    } else if (jaCount >= 3 && jaCount <= 4) {
+      ergebnisHTML = `
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold text-green-800 mb-4">Antrag wahrscheinlich sinnvoll</h2>
+          <p class="text-lg text-gray-700 mb-6">
+            Ihr Hilfebedarf deutet darauf hin, dass ein Antrag auf Pflegegrad erfolgversprechend sein könnte.
+          </p>
+          <div class="bg-green-50 border border-green-200 rounded-xl p-6 text-left">
+            <h3 class="font-semibold text-green-800 mb-3">Nächste Schritte:</h3>
+            <ul class="space-y-2 text-green-700">
+              <li>• Nutzen Sie unsere Krankenkassen-Auswahl für den passenden Antrag</li>
+              <li>• Dokumentieren Sie alle Hilfesituationen detailliert</li>
+              <li>• Sammeln Sie ärztliche Befunde und Diagnosen</li>
+              <li>• Erstellen Sie ein Pflegetagebuch für mindestens 2 Wochen</li>
+            </ul>
+          </div>
+        </div>
+      `;
+    } else if (jaCount >= 5) {
+      ergebnisHTML = `
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold text-green-800 mb-4">Antrag sehr wahrscheinlich sinnvoll</h2>
+          <p class="text-lg text-gray-700 mb-6">
+            Ihr Hilfebedarf ist deutlich ausgeprägt. Ein Antrag auf Pflegegrad ist sehr empfehlenswert.
+          </p>
+          <div class="bg-green-50 border border-green-200 rounded-xl p-6 text-left">
+            <h3 class="font-semibold text-green-800 mb-3">Empfohlene Vorgehensweise:</h3>
+            <ul class="space-y-2 text-green-700">
+              <li>• Starten Sie sofort mit der Antragstellung über unsere Krankenkassen-Auswahl</li>
+              <li>• Führen Sie ein detailliertes Pflegetagebuch</li>
+              <li>• Sammeln Sie alle relevanten ärztlichen Unterlagen</li>
+              <li>• Dokumentieren Sie den Zeitaufwand für jede Hilfestellung</li>
+              <li>• Beziehen Sie Angehörige und Pflegekräfte in die Dokumentation ein</li>
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+    
+    ergebnisContent.innerHTML = ergebnisHTML;
+    ergebnisContainer.classList.remove('hidden');
+    
+    // Scroll zum Ergebnis
+    ergebnisContainer.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>

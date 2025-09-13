@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Seite nicht gefunden | Sorevo" description="Die gesuchte Seite konnte nicht gefunden werden.">
+  <section class="min-h-screen bg-gradient-to-b from-green-50 to-white flex items-center justify-center px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- 404 Illustration -->
+      <div class="mb-8">
+        <div class="w-64 h-64 mx-auto mb-6 bg-gradient-to-br from-green-100 to-green-50 rounded-full flex items-center justify-center">
+          <img src="/assets/404/404-cat.png" alt="404 - Seite nicht gefunden" class="w-64 h-64 object-contain p-4 rounded-2xl" />
+        </div>
+      </div>
+
+      <!-- Error Code -->
+      <div class="mb-6">
+        <h1 class="text-8xl md:text-9xl font-extrabold text-green-600 mb-4">404 Ressource not found</h1>
+        <div class="w-24 h-1 bg-green-600 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Error Message -->
+      <div class="mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Oops! Diese Seite existiert nicht
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Die Seite, die Sie suchen, konnte leider nicht gefunden werden. 
+          Möglicherweise wurde sie verschoben oder die URL ist nicht korrekt.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a 
+          href="/" 
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3 text-white font-semibold shadow transition hover:bg-green-700"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          Zur Startseite
+        </a>
+        <a 
+          href="/pflegegrad-check" 
+          class="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 px-6 py-3 font-semibold text-gray-700 hover:bg-gray-50"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Pflegegrad-Check starten
+        </a>
+      </div>
+
+      <!-- Helpful Links -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border max-w-2xl mx-auto">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Möglicherweise suchen Sie nach:</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-left">
+          <a href="/#insurance-selector" class="flex items-center gap-3 p-3 rounded-xl hover:bg-green-50 transition-colors">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <span class="text-gray-700">Krankenkassen-Auswahl</span>
+          </a>
+          <a href="/#features" class="flex items-center gap-3 p-3 rounded-xl hover:bg-green-50 transition-colors">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            <span class="text-gray-700">Unsere Features</span>
+          </a>
+          <a href="/#faq" class="flex items-center gap-3 p-3 rounded-xl hover:bg-green-50 transition-colors">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-gray-700">Häufige Fragen</span>
+          </a>
+          <a href="/#cta" class="flex items-center gap-3 p-3 rounded-xl hover:bg-green-50 transition-colors">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span class="text-gray-700">Kontakt aufnehmen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="mt-8 text-sm text-gray-500">
+        <p>Brauchen Sie Hilfe? Kontaktieren Sie uns unter <a href="mailto:support@sorevo.de" class="text-green-600 hover:text-green-700">support@sorevo.de</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
