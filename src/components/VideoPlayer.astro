@@ -1,39 +1,20 @@
 ---
 export interface Props {
-  src?: string;
   title?: string;
   description?: string;
-  poster?: string;
-  width?: string;
-  height?: string;
-  autoplay?: boolean;
-  muted?: boolean;
-  controls?: boolean;
-  loop?: boolean;
   className?: string;
-  youtubeId?: string;
-  vimeoId?: string;
+  youtubeId: string;
 }
 
 const {
-  src,
   title = "Video",
   description,
-  poster,
-  width = "100%",
-  height = "auto",
-  autoplay = false,
-  muted = true,
-  controls = true,
-  loop = false,
   className = "",
-  youtubeId,
-  vimeoId
+  youtubeId
 } = Astro.props;
 
-// Generate embed URLs for video platforms
-const youtubeEmbedUrl = youtubeId ? `https://www.youtube.com/embed/${youtubeId}?rel=0&showinfo=0&modestbranding=1` : null;
-const vimeoEmbedUrl = vimeoId ? `https://player.vimeo.com/video/${vimeoId}` : null;
+// Generate YouTube embed URL
+const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeId}?rel=0&showinfo=0&modestbranding=1`;
 ---
 
 <div class={`video-container ${className}`}>
@@ -47,70 +28,27 @@ const vimeoEmbedUrl = vimeoId ? `https://player.vimeo.com/video/${vimeoId}` : nu
   )}
   
   <div class="relative rounded-2xl overflow-hidden shadow-xl bg-gray-100">
-    {youtubeEmbedUrl ? (
-      <!-- YouTube Embed -->
-      <div class="aspect-video">
-        <iframe
-          src={youtubeEmbedUrl}
-          title={title}
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full"
-        ></iframe>
-      </div>
-    ) : vimeoEmbedUrl ? (
-      <!-- Vimeo Embed -->
-      <div class="aspect-video">
-        <iframe
-          src={vimeoEmbedUrl}
-          title={title}
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full"
-        ></iframe>
-      </div>
-    ) : src ? (
-      <!-- Direct Video File -->
-      <video
-        src={src}
-        poster={poster}
-        controls={controls}
-        autoplay={autoplay}
-        muted={muted}
-        loop={loop}
-        class="w-full h-auto"
-        style={`width: ${width}; height: ${height};`}
-      >
-        <p class="text-gray-600 p-4">
-          Ihr Browser unterstützt das Video-Element nicht. 
-          <a href={src} class="text-blue-600 underline">Video herunterladen</a>
-        </p>
-      </video>
-    ) : (
-      <!-- Placeholder -->
-      <div class="aspect-video bg-gray-200 flex items-center justify-center">
-        <div class="text-center text-gray-500">
-          <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m-4-8V4a1 1 0 011-1h4a1 1 0 011 1v2m-6 0H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-2"></path>
-          </svg>
-          <p class="text-lg font-semibold">Video wird geladen...</p>
-          <p class="text-sm">Bitte Video-Quelle angeben</p>
-        </div>
-      </div>
-    )}
+    <!-- YouTube Embed -->
+    <div class="aspect-video">
+      <iframe
+        src={youtubeEmbedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        class="w-full h-full"
+      ></iframe>
+    </div>
   </div>
 </div>
 
 <style>
   .video-container {
-    @apply max-w-4xl mx-auto px-6;
-  }
-  
-  /* Custom play button overlay for better UX */
-  .video-container video:not([controls]) {
-    cursor: pointer;
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
   
   /* Responsive iframe styling */
@@ -119,33 +57,13 @@ const vimeoEmbedUrl = vimeoId ? `https://player.vimeo.com/video/${vimeoId}` : nu
   }
   
   /* Smooth transitions */
-  .video-container iframe,
-  .video-container video {
+  .video-container iframe {
     transition: transform 0.2s ease;
   }
   
-  .video-container:hover iframe,
-  .video-container:hover video {
+  .video-container:hover iframe {
     transform: scale(1.02);
   }
 </style>
 
-<script>
-  // Add custom video controls if needed
-  document.addEventListener('DOMContentLoaded', function() {
-    const videos = document.querySelectorAll('video');
-    
-    videos.forEach(video => {
-      // Add click to play/pause for videos without controls
-      if (!video.hasAttribute('controls')) {
-        video.addEventListener('click', function() {
-          if (video.paused) {
-            video.play();
-          } else {
-            video.pause();
-          }
-        });
-      }
-    });
-  });
-</script>
+
